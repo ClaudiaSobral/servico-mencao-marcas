@@ -24,13 +24,21 @@ Este repositório documenta a criação de um serviço de ingestão de dados por
 
 - Fiquei entre o Django, Flask e FastAPI, serviços populares de desenvolvimento com APIs. Dentro dos prós e contras dos três, escolhi seguir com o FastAPI, que é rápido, seguro e aplicável a projetos simples, pois o Flask me pareceu ser menos robusto em questão de segurança e rapidez e o Django parecia ser seguro mas não ter suporte a projetos tão simples nem ser tão rápido.
 
+- Seguindo a sugestão de tempo do desafio, eu decidi utilizar a seguinte estratégia: explicando o contexto do desafio para a IA generativa, criei o código através de prompt para voltar revisando validando cada etapa em uma branch separada.
+
+As branchs são:
+1. development/ingestao-de-mencoes (testa modelo_json.py e ingestao.py)
+2. development/deteccao-de-mencoes (testa deteccao-de-mencoes.py)
+3. development/armazenamento (testa armazenamento.py)
+4. development/main-script (testa o script de orquestração main.py)
+
 ### Estrutura de pastas
 
     servico-mencao-marcas/
     ├── assets/             # Recursos extras de documentação
     │   ├── imgs            # Pasta para imagens
     │   └── docs            # Documentos extras
-    ├── assets/             # Recursos extras de documentação
+    ├── src/             # Recursos extras de documentação
     │   ├── armazenamento.py
     │   ├── deteccao_mencoes.py
     │   ├── ingestao.py        

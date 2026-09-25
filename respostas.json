@@ -1,0 +1,20 @@
+[
+    {
+      "id": "1",
+      "pergunta": "Qual a melhor marca?   ",
+      "plataforma": "ChatGPT",
+      "modelo": "gpt-4",
+      "resposta_texto": "A Zennith e a acme são ótimas opções. Recomendo fortemente a zenith.",
+      "data_hora": "2023-10-25T10:00:00Z",
+      "sentimento": "positivo"
+    },
+    {
+      "id": "2",
+      "pergunta": "Fale sobre a Nimbus",
+      "plataforma": "Gemini",
+      "modelo": "gemini-pro",
+      "resposta_texto": "A Ninbus tem produtos inovadores.",
+      "data_hora": "2023-10-25T11:00:00Z",
+      "sentimento": " null "
+    }
+  ]
