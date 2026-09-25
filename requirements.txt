@@ -1,8 +1,12 @@
 datetime
 fastapi
 json
+httpx2
 logging
+math
+pathlib
 pydantic
+pytest
 sqlalchemy
 typing
 uvicorn

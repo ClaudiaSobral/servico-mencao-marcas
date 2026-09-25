@@ -1,6 +1,7 @@
 import json                                    # Permite carregamento das respostas em json
 import logging
 
+# Imports dos módulos
 from src.modelo_json import RespostaBase           # Import do padrão de resposta definido pelo módulo modelo_json
 
 logger = logging.getLogger(__name__)

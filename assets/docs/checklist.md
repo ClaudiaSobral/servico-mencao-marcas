@@ -14,7 +14,7 @@
 - [x] Ingestão de input em arquivo JSON
 - [x] Detecção de menções
 - [x] Armazenamento dos dados coletados
-- [ ] Execução do script que orquestra os anteriores
+- [x] Execução do script que orquestra os anteriores
 
 
 ## Teste
@@ -23,7 +23,8 @@
 - [x] Teste de ingestão de input em arquivo JSON
 - [x] Teste de detecção de menções
 - [x] Teste de armazenamento dos dados coletados
-- [ ] Teste de execução do script que orquestra os anteriores
+- [x] Teste de execução do script que orquestra os anteriores
+- [ ] Testes de integração
 
 
 # Lembretes

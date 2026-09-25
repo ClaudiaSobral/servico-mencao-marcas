@@ -1,7 +1,7 @@
 from sqlalchemy import (                                  # Importa as estruturas de tipos da base
     Column,
     DateTime,
-    Integer,
+    Float,
     JSON,
     String,
     Text,
@@ -32,7 +32,7 @@ class RespostaDB(Base):                                   # Inicializa estrutura
     data_hora = Column(DateTime(timezone=True), nullable=False) # Aramazena dara e hora com suporte a fuso
     sentimento = Column(String, nullable=True)                  # Sentimento pode ser nulo
     marcas_mencionadas = Column(JSON, nullable=False)           # Utiliza JSON para manter uma estrutura com suporte a listas
-    score_citacao = Column(Integer, nullable=False, default=0)  # Usa 0 quando o score não for informado
+    score_citacao = Column(Float, nullable=False, default=0)  # Usa 0 quando o score não for informado
 
 def criar_tabelas():
     """Cria as tabelas do banco definidas pelos modelos ORM."""                                        
