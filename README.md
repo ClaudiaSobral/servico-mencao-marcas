@@ -55,6 +55,7 @@ As branchs são:
 2. develop/deteccao-de-mencoes (testa deteccao-de-mencoes.py)
 3. develop/armazenamento (testa armazenamento.py)
 4. develop/main-script (testa o script de orquestração main.py)
+5. develop/integracao (testa se o fluxo da aplicação funciona)
 
 -  Nessa etapa, adicionei docstrings em cada classe definida e suprimi código sobressalente/que seria depreciado. Fui fazendo também os testes unitários com a biblioteca pytest.
 
