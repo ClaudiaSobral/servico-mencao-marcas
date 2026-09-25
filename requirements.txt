@@ -1,6 +1,7 @@
 datetime
 fastapi
 json
+logging
 pydantic
 sqlalchemy
 typing

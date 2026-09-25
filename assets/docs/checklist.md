@@ -30,3 +30,4 @@
 - Tratar "null", "n/a", "none" e variáveis como nulos
 - Lembrar de verificar se as menções estão com variação para erro de digitação
 - Lembrar de registrar o que os testes fazem
+    - Quando escrever sobre os testes, falar sobre opção por testar o básico
