@@ -7,12 +7,14 @@
 - [x] Criar arquivos de apoio
 
 ## Framework
-- [ ] Escolher um framework que faça sentido com a PiniOn
+- [x] Escolher um framework que faça sentido com a PiniOn
 
 ## Funcionalidades modularizadas
+- [ ] Modelo de validação em JSON
 - [ ] Ingestão de input em arquivo JSON
 - [ ] Detecção de menções
 - [ ] Armazenamento dos dados coletados
+- [ ] Execução do script que orquestra os anteriores
 
 
 ## Teste
