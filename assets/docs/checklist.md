@@ -24,7 +24,7 @@
 - [x] Teste de detecção de menções
 - [x] Teste de armazenamento dos dados coletados
 - [x] Teste de execução do script que orquestra os anteriores
-- [ ] Testes de integração
+- [x] Testes de integração
 
 
 # Lembretes
