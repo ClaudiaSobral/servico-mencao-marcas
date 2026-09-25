@@ -1,0 +1,8 @@
+datetime
+fastapi
+json
+pydantic
+sqlalchemy
+typing
+uvicorn
+re

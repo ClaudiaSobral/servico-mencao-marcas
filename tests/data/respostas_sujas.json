@@ -1,0 +1,90 @@
+[
+    {
+      "id": "100",
+      "pergunta": "Pergunta válida",
+      "plataforma": "ChatGPT",
+      "modelo": "gpt-4",
+      "resposta_texto": "Acme é citada.",
+      "data_hora": "2025-01-15T10:00:00"
+    },
+  
+    {},
+  
+    {
+      "id": "101"
+    },
+  
+    {
+      "id": "102",
+      "pergunta": null,
+      "plataforma": "Gemini",
+      "modelo": "gemini-pro",
+      "resposta_texto": "Nimbus",
+      "data_hora": "2025-01-15T11:00:00"
+    },
+  
+    {
+      "foo": "bar"
+    },
+  
+    {
+      "id": "103",
+      "pergunta": "Data inválida",
+      "plataforma": "ChatGPT",
+      "modelo": "gpt-4",
+      "resposta_texto": "Zenith",
+      "data_hora": "ontem"
+    },
+  
+    {
+      "id": "104",
+      "pergunta": "Modelo ausente",
+      "plataforma": "Perplexity",
+      "resposta_texto": "Acme",
+      "data_hora": "2025-01-15T12:00:00"
+    },
+  
+    {
+      "id": 105,
+      "pergunta": "ID numérico",
+      "plataforma": "ChatGPT",
+      "modelo": "gpt-4",
+      "resposta_texto": "Nimbus",
+      "data_hora": "2025-01-15T13:00:00"
+    },
+  
+    {
+      "id": "106",
+      "pergunta": "",
+      "plataforma": "",
+      "modelo": "",
+      "resposta_texto": "",
+      "data_hora": "2025-01-15T14:00:00"
+    },
+  
+    {
+      "id": "107",
+      "pergunta": "Outra válida",
+      "plataforma": "Gemini",
+      "modelo": "gemini-pro",
+      "resposta_texto": "Acme e Zenith.",
+      "data_hora": "2025-01-15T15:00:00"
+    },
+  
+    null,
+  
+    [],
+  
+    "registro inválido",
+  
+    {
+      "id": "108",
+      "pergunta": "Campos extras",
+      "plataforma": "ChatGPT",
+      "modelo": "gpt-4",
+      "resposta_texto": "Nimbus",
+      "data_hora": "2025-01-15T16:00:00",
+      "origem": "crawler",
+      "versao": "1.2"
+    }
+  ]
