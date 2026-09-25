@@ -1,0 +1,46 @@
+[
+    {
+      "id": "1",
+      "pergunta": "Qual a melhor solução para armazenamento em nuvem?",
+      "plataforma": "ChatGPT",
+      "modelo": "gpt-4",
+      "resposta_texto": "A Acme oferece boas opções para empresas.",
+      "data_hora": "2025-01-10T09:30:00",
+      "sentimento": "positivo"
+    },
+    {
+      "id": "2",
+      "pergunta": "Quais marcas são líderes em tecnologia?",
+      "plataforma": "Gemini",
+      "modelo": "gemini-pro",
+      "resposta_texto": "Nimbus e Zenith possuem presença relevante no mercado.",
+      "data_hora": "2025-01-11T14:15:00",
+      "sentimento": null
+    },
+    {
+      "id": "3",
+      "pergunta": "Quais empresas oferecem melhor suporte?",
+      "plataforma": "Perplexity",
+      "modelo": "sonar",
+      "resposta_texto": "Acme e Nimbus costumam ser bem avaliadas.",
+      "data_hora": "2025-01-12T18:45:00",
+      "sentimento": "neutro"
+    },
+    {
+      "id": "4",
+      "pergunta": "Qual plataforma é mais recomendada?",
+      "plataforma": "ChatGPT",
+      "modelo": "gpt-4o",
+      "resposta_texto": "Zenith aparece frequentemente em comparativos.",
+      "data_hora": "2025-01-13T08:00:00"
+    },
+    {
+      "id": "5",
+      "pergunta": "Existe uma marca dominante?",
+      "plataforma": "Gemini",
+      "modelo": "gemini-pro",
+      "resposta_texto": "Acme é frequentemente citada, mas Nimbus também é forte.",
+      "data_hora": "2025-01-14T21:10:00",
+      "sentimento": "positivo"
+    }
+  ]
