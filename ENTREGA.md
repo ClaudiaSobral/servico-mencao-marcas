@@ -8,12 +8,15 @@ Este repositório documenta a criação de um serviço de ingestão de dados por
 
 Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLite usando SQLAlchemy** para armazenar respostas de webscraping, detectando menções a marcas.
 
+![git_hub_api_interface](/assets/img/git_hub_api_interface.jpeg)
+*Imagem da API rodando na interface Swagger IU*
+
 ### Framework escolhido
 
 > Fast API + SQLAlchemy & SQLite
 
 ### Bibliotecas principais
-```fastapi``` ```sqlalchemy``` ```pytest``` ```uvicorn.```
+```fastapi``` ```sqlalchemy``` ```pydantic``` ```pytest``` ```uvicorn``` ```httpx```
 
 ## 2. Estrutura de pastas
 
@@ -75,7 +78,7 @@ A `score_citacao` é uma métrica que busca representar a força de uma menção
 - Esqueci a boa prática do "git pull" depois de criar sincronizar o repositório remoto. Tive que usar o **"git push --force-with-lease"**, com cautela, no primeiro commit.
 - Ao fazer a validação, revisei e documentei o código, **pesquisando o que não entendi e suprimindo o que não era funcional**. Por exemplo, a IA sugeriu usar o módulo typing para importar List e Optional, mas vi que esses módulos serão depreciados. (A linha "Optional[str] = None" virou "sentimento: str | None = None"). Fui corrigindo o arquivo "requirement.txt" enquanto suprimia código.
 - Não sou proficiente em fazer testes de validação de API. A validação que costumo fazer é dentro dos bancos de dados. Tive dificuldade em pedir a implementação de testes com logs na IA, então eu...
->usei a mesma lógica de testes que faria "manualmente" na com pandas ou SQL para verificar se uma base está limpa (ou seja, verifiquei se repostas íntegras passavam, se havia duplicatas, se os contraints de tipos estavam funcionando etc).
+>usei a mesma lógica de testes que faria "manualmente" na com pandas ou SQL para verificar se uma base está limpa (ou seja, verifiquei **principalmente** se repostas íntegras passavam, se repostas fora do padrão eram rejeitadas, se havia duplicatas/se as operações eram idempotentes e se a se os contraints de tipos estavam funcionando).
 - Demorei *bastante* tempo tentando fazer melhorias incrementais com IA generativa a partir do troubleshooting do teste. Foquei em **o quê** testar e não exatamente como os testes funcionam.
 - Para amenizar isso, criei arquivos gerados por IA que simulam uma quatidade maior de dicionários json, chamados "respostas_sujas.json" e "respostas_validas.json", para além dos testes dentro do próprio arquivo. Isso me deu um parâmetro de que o código conseguiria ingerir um formato maior de erros no momento de ingestão, que é crucial para o framework.
 - Inicialmente, eu considerei "força" da menção como uma contagem simples de palavras, mas percebi ao longo do desafio que uma contagem não fornece o contexto necessário. Tentei aplicar uma média ponderada que fosse mais justa com o contexto. Foi um grande desafio e eu gostaria de estudar melhor como fazer isso, talvez com NLP, mas avaliaria rotas fora de um ML antes.
