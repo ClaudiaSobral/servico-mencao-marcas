@@ -1,13 +1,17 @@
+![git_hub_project_mencao](/assets/img/git_hub_project_mencao.png)
+
 # Serviço de menções de marcas em respostas IA
 
 Este repositório documenta a criação de um serviço de ingestão de dados por arquivo JSON através de API para monitorar menções a marcas monitoradas ("Acme", "Zenith" e "Nimbus")
 
-❗OBSERVAÇÃO❗ Esse README consta com decisões arquiteturais e explicações a fundo do passo a passo. Para o README resumido apenas com os entregáveis, prossiga para [README_resumido.md]()
+❗OBSERVAÇÃO❗ Nesse README constam decisões arquiteturais e explicações a fundo do processo. Para o README resumido apenas com os entregáveis, prossiga para [ENTREGA.md](https://github.com/ClaudiaSobral/servico-mencao-marcas/blob/main/ENTREGA.md)
 
 
 ## 1. Resumo
 
 Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLite usando SQLAlchemy** para armazenar respostas de webscraping, detectando menções a marcas.
+
+![git_hub_project_framework](/assets/img/git_hub_mencao_framework.png)
 
 ### Framework escolhido
 > Fast API + SQLAlchemy & SQLite
@@ -18,6 +22,7 @@ Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLit
 ### Estrutura de pastas
 
 A seguinte estrutura de pastas foi utilizada por ser um modelo modularizável e fácil de trabalhar em um framework de Git. Também é o padrão que tenho usado e que observo meus pares utilizando.
+Vale ressaltar que em todo momento são utilizados arquivos .json sintéticos para teste. Caso fossem dados reais do cliente, não estariam versionados.
 
 
     servico-mencao-marcas/
@@ -141,6 +146,20 @@ As branchs são:
         6. normalização de "null" para None;
         7. rejeição de payloads inválidos.
 
+
+    - Resultado do smoke test funcionando:
+
+                ✅ POST /respostas aceita 'smoke-forte-acme'
+                ✅ POST /respostas aceita 'smoke-fraca-zenith'
+                ✅ POST /respostas aceita 'smoke-sem-marca'
+                ✅ POST /respostas é idempotente para id repetido
+                ✅ GET /share-of-voice responde 200
+                ✅ GET /share-of-voice calcula o percentual esperado
+                ✅ GET /top-citacoes responde 200
+                ...
+                Todas as verificações passaram.
+
+
 ## 4. Persistência
 
 - O armazenamento das respostas foi feito em um banco SQLite gerado por SQLAlchemy, escolhido por ser facilmente integrado com PostgreSQL, que lembro de ser banco utilizado pela PiniOn. A integração pode ser feita com lgumas pequenas mudanças e uso do Alembic (um toolkit de migração de bases SQLAlchemy).
@@ -175,7 +194,7 @@ A `score_citacao` é uma métrica que busca representar a força de uma menção
 
 
 ## 6. Desafios e aprendizados
-
+> O maior desafio foi sem dúvidas a validação e a implementação de "força" da menção
 - Esqueci a boa prática do "git pull" depois de criar sincronizar o repositório remoto. Tive que usar o **"git push --force-with-lease"**, com cautela, no primeiro commit.
 - Ao fazer a validação, revisei e documentei o código, **pesquisando o que não entendi e suprimindo o que não era funcional**. Por exemplo, a IA sugeriu usar o módulo typing para importar List e Optional, mas vi que esses módulos serão depreciados. (A linha "Optional[str] = None" virou "sentimento: str | None = None"). Fui corrigindo o arquivo "requirement.txt" enquanto suprimia código.
 - Não sou proficiente em fazer testes de validação de API. A validação que costumo fazer é dentro dos bancos de dados. Tive dificuldade em pedir a implementação de testes com logs na IA, então eu...
@@ -284,5 +303,5 @@ uvicorn src.main:app --reload
 Em outro terminal, com o ambiente virtual ativado:
 
 ```bash
-python scripts/verificar_servico.py
+python scr/verificar_servico.py
 ```

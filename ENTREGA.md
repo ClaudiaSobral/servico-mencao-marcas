@@ -1,3 +1,5 @@
+![git_hub_project_mencao](/assets/img/git_hub_project_mencao.png)
+
 # Serviço de menções de marcas em respostas IA
 
 Este repositório documenta a criação de um serviço de ingestão de dados por arquivo JSON através de API para monitorar menções a marcas monitoradas ("Acme", "Zenith" e "Nimbus")
@@ -7,14 +9,18 @@ Este repositório documenta a criação de um serviço de ingestão de dados por
 Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLite usando SQLAlchemy** para armazenar respostas de webscraping, detectando menções a marcas.
 
 ### Framework escolhido
+
+![git_hub_project_framework](/assets/img/git_hub_mencao_framework.png)
+
 > Fast API + SQLAlchemy & SQLite
 
 ### Bibliotecas principais
 ```fastapi``` ```sqlalchemy``` ```pytest``` ```uvicorn.```
 
-### 2. Estrutura de pastas
+## 2. Estrutura de pastas
 
 A seguinte estrutura de pastas foi utilizada por ser um modelo modularizável e fácil de trabalhar em um framework de Git. Também é o padrão que tenho usado e que observo meus pares utilizando.
+Vale ressaltar que em todo momento são utilizados arquivos .json sintéticos para teste. Caso fossem dados reais do cliente, não estariam versionados.
 
     servico-mencao-marcas/
     ├── assets/             # Recursos extras de documentação
@@ -64,6 +70,7 @@ A `score_citacao` é uma métrica que busca representar a força de uma menção
 
 
 ## 4. Desafios e aprendizados
+> O maior desafio foi sem dúvidas a validação e a implementação de "força" da menção
 
 - Esqueci a boa prática do "git pull" depois de criar sincronizar o repositório remoto. Tive que usar o **"git push --force-with-lease"**, com cautela, no primeiro commit.
 - Ao fazer a validação, revisei e documentei o código, **pesquisando o que não entendi e suprimindo o que não era funcional**. Por exemplo, a IA sugeriu usar o módulo typing para importar List e Optional, mas vi que esses módulos serão depreciados. (A linha "Optional[str] = None" virou "sentimento: str | None = None"). Fui corrigindo o arquivo "requirement.txt" enquanto suprimia código.

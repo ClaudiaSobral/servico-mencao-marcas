@@ -19,7 +19,7 @@ de testes.
 
 import sys
 
-import httpx2
+import httpx
 
 BASE_URL = "http://127.0.0.1:8000"
 
@@ -67,10 +67,10 @@ def checar(descricao, condicao):
 
 
 def main():
-    with httpx2.Client(base_url=BASE_URL, timeout=5.0) as cliente:
+    with httpx.Client(base_url=BASE_URL, timeout=5.0) as cliente:
         try:
             cliente.get("/docs")
-        except httpx2.ConnectError:
+        except httpx.ConnectError:
             print(
                 "Não consegui conectar em"
                 f" {BASE_URL}. Suba a API primeiro com:\n"

@@ -1,7 +1,7 @@
 datetime
 fastapi
 json
-httpx2
+httpx
 logging
 math
 pathlib
