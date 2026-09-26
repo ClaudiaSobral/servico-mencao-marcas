@@ -10,8 +10,6 @@ Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLit
 
 ### Framework escolhido
 
-![git_hub_project_framework](/assets/img/git_hub_mencao_framework.png)
-
 > Fast API + SQLAlchemy & SQLite
 
 ### Bibliotecas principais
