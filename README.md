@@ -24,18 +24,19 @@ Vale ressaltar que em todo momento são utilizados arquivos .json sintéticos pa
 
 
     servico-mencao-marcas/
-    ├── assets/             # Recursos extras de documentação
-    │   ├── imgs            # Pasta para imagens
-    │   └── docs            # Documentos extras
-    ├── src/                # Scripts da aplicação
+    ├── assets/                     # Recursos extras de documentação
+    │   ├── imgs                    # Pasta para imagens
+    │   └── docs                    # Documentos extras
+    ├── src/                        # Scripts da aplicação
     │   ├── __init__.py
     │   ├── armazenamento.py
     │   ├── deteccao_mencoes.py
     │   ├── ingestao.py        
     │   ├── main.py            
-    │   └── modelo_json.py
-    ├── tests/              # Scripts de teste 
-    │   ├── data/           # Arquivos sintéticos para validação
+    │   ├── modelo_json.py            
+    │   └── verificar_servico.py
+    ├── tests/                          # Scripts de teste 
+    │   ├── data/                       # Arquivos sintéticos para validação
     │   │  ├── respostas_validas.json
     │   │  └── respostas_sujas.json
     │   ├── __init__.py
@@ -43,9 +44,10 @@ Vale ressaltar que em todo momento são utilizados arquivos .json sintéticos pa
     │   ├── test_deteccao_mencoes.py
     │   ├── test_ingestao.py
     │   ├── test_integracao.py
-    │   ├── main.py
+    │   ├── test_main.py
     │   └── test_modelo_json.py
-    ├── README.md           # Arquivo principal de documentação
+    ├── README.md                   # Arquivo principal de documentação
+    ├── ENTREGA.md                  # README resumido apenas com os entregáveis
     ├── .gitignore
     └── requirements.txt
 
