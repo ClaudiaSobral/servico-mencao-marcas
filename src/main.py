@@ -20,6 +20,14 @@ app = FastAPI(                                          # Inicialização do Fas
 )
 
 
+@app.get("/")
+def raiz():
+    return {
+        "status": "ok",
+        "servico": "Servico de Analise de Mencoes",
+        "docs": "/docs"
+    }
+
 criar_tabelas()
 
 # Lista de expressões que podem aumentar a "força" das menções
