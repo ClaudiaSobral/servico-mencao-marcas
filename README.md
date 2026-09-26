@@ -4,7 +4,7 @@
 
 Este repositório documenta a criação de um serviço de ingestão de dados por arquivo JSON através de API para monitorar menções a marcas monitoradas ("Acme", "Zenith" e "Nimbus")
 
-❗OBSERVAÇÃO❗ Nesse README constam decisões arquiteturais e explicações a fundo do processo. Para o README resumido apenas com os entregáveis, prossiga para [README_resumido.md](https://github.com/ClaudiaSobral/servico-mencao-marcas/blob/main/README_resumido.md)
+❗OBSERVAÇÃO❗ Nesse README constam decisões arquiteturais e explicações a fundo do processo. Para o README resumido apenas com os entregáveis, prossiga para [ENTREGA.md](https://github.com/ClaudiaSobral/servico-mencao-marcas/blob/main/ENTREGA.md)
 
 
 ## 1. Resumo
