@@ -11,8 +11,6 @@ Este repositório documenta a criação de um serviço de ingestão de dados por
 
 Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLite usando SQLAlchemy** para armazenar respostas de webscraping, detectando menções a marcas.
 
-![git_hub_project_framework](/assets/img/git_hub_mencao_framework.png)
-
 ### Framework escolhido
 > Fast API + SQLAlchemy & SQLite
 
