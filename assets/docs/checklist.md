@@ -26,13 +26,23 @@
 - [x] Teste de execução do script que orquestra os anteriores
 - [x] Testes de integração
 
+## Finalização
+
+- [x] Seção de explicação de testes
+- [x] Seção de explicação da rota do API
+- [x] Seção explicando "força" da menção e share-of-voice
+- [x] Explicar como instalar
+- [x] Finalizar "O que eu faria de diferente"
+
+
 
 # Lembretes
-- Tratar "null", "n/a", "none" e variáveis como nulos
+✅ Tratar "null", "n/a", "none" e variáveis como nulos
 ✅ Lembrar de verificar se as menções estão com variação para erro de digitação 
+- Lembrar de falar da lógica por trás da "força" da menção e share-of-voice
 - Lembrar de registrar o que os testes fazem
     - Quando escrever sobre os testes, falar sobre opção por testar o básico
-- Provavelmente eu vou deixar de fora os testes de carga, de vazamento de memória etc... Considerar também se eu deveria prever mais erros de uso e implementar mais try/excepts
-- Considerar também segurança.
+✅ Provavelmente eu vou deixar de fora os testes de carga, de vazamento de memória etc... Considerar também se eu deveria prever mais erros de uso e implementar mais try/excepts
+✅ Considerar também segurança.
 ✅ A princípio, eu não sei o quanto o modelo lida com uma SQL injection, por exemplo
-✅ Explicar marcas_mencionadas = Column(JSON)em armazenamento.py
+✅ Comentar marcas_mencionadas = Column(JSON)em armazenamento.py

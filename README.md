@@ -2,7 +2,7 @@
 
 Este repositório documenta a criação de um serviço de ingestão de dados por arquivo JSON através de API para monitorar menções a marcas monitoradas ("Acme", "Zenith" e "Nimbus")
 
-❗OBSERVAÇÃO❗ Esse README consta com decisões arquiteturais e explicações complexas do passo a passo. Para o README resumido apenas com os entregáveis, prossiga para [README_resumido.md]()
+❗OBSERVAÇÃO❗ Esse README consta com decisões arquiteturais e explicações a fundo do passo a passo. Para o README resumido apenas com os entregáveis, prossiga para [README_resumido.md]()
 
 
 ## 1. Resumo
@@ -16,6 +16,9 @@ Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLit
 ```fastapi``` ```sqlalchemy``` ```pytest``` ```uvicorn.```
 
 ### Estrutura de pastas
+
+A seguinte estrutura de pastas foi utilizada por ser um modelo modularizável e fácil de trabalhar em um framework de Git. Também é o padrão que tenho usado e que observo meus pares utilizando.
+
 
     servico-mencao-marcas/
     ├── assets/             # Recursos extras de documentação
@@ -47,15 +50,28 @@ Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLit
 
 ## 2.  Passo a passo
 
-            respostas.json
-                ↓
-            ingestão (modelo_json.py + ingestao.py)
-                ↓
-            detecção de marcas (deteccao_mencoes.py)
-                ↓
-            armazenamento
-                ↓
-            orquestração e análise (main.py)
+        respostas.json
+            │
+            ▼
+        POST /respostas
+            │
+            ├── Pydantic
+            │
+            ▼
+        DetectorMencoes
+            │
+            ├── marcas
+            └── score_citacao
+            │
+            ▼
+        SQLAlchemy
+            │
+            ▼
+        SQLite
+            │
+            ├──────────────┐
+            ▼              ▼
+        /share-of-voice   /top-citacoes
 
 ### Planejamento do projeto
 - **Passo inicial**: análise do contexto fornecido e delimitar os principais entregáveis e funcionalidades do projeto.
@@ -139,6 +155,22 @@ As branchs são:
 
 ## 5. A "força" da menção
 
+                        Força da menção
+                            │
+                ┌──────────────┼──────────────┐
+                ▼              ▼              ▼
+        Frequência      Contexto       Posição
+                │              │              │
+                └──────────────┼──────────────┘
+                            ▼
+                        Exclusividade
+                            │
+                            ▼
+                        + Sentimento
+                            │
+                            ▼
+                        Score final
+
 A `score_citacao` é uma métrica que busca representar a força de uma menção de marca na resposta. O cálculo combina a **frequência de ocorrência da marca**, a presença de **termos associados a recomendações**, a **posição da primeira menção**, a **quantidade de marcas concorrentes citadas** e o **sentimento** da resposta. A frequência utiliza uma espécie de média ponderada para aumentar o score para menções positivas e reduzindo-o para menções negativas. Atualmente, o score é calculado para a **primeira marca detectada na resposta** através da seleção do index 0 em ```marca=marcas[0]``` no arquivo ```deteccao_mencoes.py```, o que é uma limitação da atual implementação.
 
 
@@ -148,9 +180,9 @@ A `score_citacao` é uma métrica que busca representar a força de uma menção
 - Ao fazer a validação, revisei e documentei o código, **pesquisando o que não entendi e suprimindo o que não era funcional**. Por exemplo, a IA sugeriu usar o módulo typing para importar List e Optional, mas vi que esses módulos serão depreciados. (A linha "Optional[str] = None" virou "sentimento: str | None = None"). Fui corrigindo o arquivo "requirement.txt" enquanto suprimia código.
 - Não sou proficiente em fazer testes de validação de API. A validação que costumo fazer é dentro dos bancos de dados. Tive dificuldade em pedir a implementação de testes com logs na IA, então eu...
 >usei a mesma lógica de testes que faria "manualmente" na com pandas ou SQL para verificar se uma base está limpa (ou seja, verifiquei se repostas íntegras passavam, se havia duplicatas, se os contraints de tipos estavam funcionando etc).
-- Demorei *bastante* tempo tentando fazer melhorias incrementais a partir do troubleshooting do teste. Foquei em **o quê** testar e não exatamente como os testes funcionam.
+- Demorei *bastante* tempo tentando fazer melhorias incrementais com IA generativa a partir do troubleshooting do teste. Foquei em **o quê** testar e não exatamente como os testes funcionam.
 - Para amenizar isso, criei arquivos gerados por IA que simulam uma quatidade maior de dicionários json, chamados "respostas_sujas.json" e "respostas_validas.json", para além dos testes dentro do próprio arquivo. Isso me deu um parâmetro de que o código conseguiria ingerir um formato maior de erros no momento de ingestão, que é crucial para o framework.
-- Inicialmente, eu considerei "força" da menção como uma contagem simples de palavras, mas percebi ao longo do desafio que uma contagem não fornece o contexto necessário. Foi um grande desafio e eu gostaria de estudar melhor como fazer isso, talvez com NLP, mas avaliaria rotas fora de um ML antes.
+- Inicialmente, eu considerei "força" da menção como uma contagem simples de palavras, mas percebi ao longo do desafio que uma contagem não fornece o contexto necessário. Tentei aplicar uma média ponderada que fosse mais justa com o contexto. Foi um grande desafio e eu gostaria de estudar melhor como fazer isso, talvez com NLP, mas avaliaria rotas fora de um ML antes.
 
 ## 7. O que eu faria diferente se tivesse mais tempo
 
