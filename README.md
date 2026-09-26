@@ -22,6 +22,7 @@ Aplicação em Python que utiliza o **framework FastAPI + armazenamento em SQLit
 ### Estrutura de pastas
 
 A seguinte estrutura de pastas foi utilizada por ser um modelo modularizável e fácil de trabalhar em um framework de Git. Também é o padrão que tenho usado e que observo meus pares utilizando.
+Vale ressaltar que em todo momento são utilizados arquivos .json sintéticos para teste. Caso fossem dados reais do cliente, não estariam versionados.
 
 
     servico-mencao-marcas/
