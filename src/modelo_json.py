@@ -4,6 +4,9 @@ from pydantic import BaseModel, Field, field_validator, model_validator       # 
 
 logger = logging.getLogger(__name__)
 
+VALORES_NULOS = {"null", "none", "n/a", "na", "nan", ""}
+
+
 
 class RespostaBase(BaseModel): 
     """Faz o constraint de uma resposta da IA para tipos
@@ -34,6 +37,17 @@ class RespostaBase(BaseModel):
     def _logar_conversao_data(cls, v):
         logger.debug("Campo data_hora convertido para datetime: %r -> processando", v)
         return v
+
+    @field_validator("sentimento", mode="before")
+    @classmethod
+    def _normalizar_sentimento_nulo(cls, v):
+        """Converte representações textuais de nulo para None."""
+
+        if isinstance(v, str) and v.strip().lower() in VALORES_NULOS:
+            return None
+
+        return v
+
 
     @model_validator(mode="after")
     def _logar_criacao(self):
